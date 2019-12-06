@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.andriyuk.backendtest.account.v0_1.service.DepositServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-06T14:46:54" hostname="instance-1" time="0.177">
+  <properties/>
+  <testcase name="depositTest()" classname="com.andriyuk.backendtest.account.v0_1.service.DepositServiceTest" time="0.177"/>
+  <system-out><![CDATA[?[36m14:46:54.274?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.context.env.DefaultEnvironment?[0;39m - Established active environments: [test, gcp, cloud]
+?[36m14:46:54.547?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Starting...
+?[36m14:46:54.556?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Start completed.
+?[36m14:46:54.557?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.jdbc.hikari.DatasourceFactory?[0;39m - Could not wire metrics to HikariCP as there is no class of type MeterRegistry on the classpath, io.micronaut.configuration:micrometer-core library missing.
+?[36m14:46:54.558?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mo.f.c.i.database.DatabaseFactory?[0;39m - Database: jdbc:h2:mem:test (H2 1.4)
+?[36m14:46:54.562?[0;39m ?[1;30m[Test worker]?[0;39m ?[31mWARN ?[0;39m ?[35mo.f.c.i.database.base.Database?[0;39m - Flyway upgrade recommended: H2 1.4.199 is newer than this version of Flyway and support has not been tested.
+?[36m14:46:54.595?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mo.f.core.internal.command.DbValidate?[0;39m - Successfully validated 2 migrations (execution time 00:00.016s)
+?[36m14:46:54.621?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mo.f.core.internal.command.DbMigrate?[0;39m - Current version of schema "PUBLIC": 1
+?[36m14:46:54.626?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mo.f.core.internal.command.DbMigrate?[0;39m - Schema "PUBLIC" is up to date. No migration necessary.
+?[36m14:46:54.729?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Shutdown initiated...
+?[36m14:46:54.738?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mcom.zaxxer.hikari.HikariDataSource?[0;39m - HikariPool-2 - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

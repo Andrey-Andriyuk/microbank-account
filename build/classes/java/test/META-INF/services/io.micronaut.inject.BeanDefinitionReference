@@ -1,0 +1,6 @@
+com.andriyuk.backendtest.account.v0_1.service.$ConcurrencyTestDefinitionClass
+com.andriyuk.backendtest.account.v0_1.service.$AccountServiceTestDefinitionClass
+com.andriyuk.backendtest.account.v0_1.service.$ConcurrencyTestTransferServiceDefinitionClass
+com.andriyuk.backendtest.account.v0_1.service.$DepositServiceTestDefinitionClass
+com.andriyuk.backendtest.account.v0_1.service.$TransferServiceTestDefinitionClass
+com.andriyuk.backendtest.account.v0_1.service.$WithdrawalServiceTestDefinitionClass

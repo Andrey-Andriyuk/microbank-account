@@ -1,0 +1,208 @@
+openapi: 3.0.1
+info:
+  title: account
+  description: Basic account microservice, designed without using heavy frameworks,
+    such as Spring
+  contact:
+    name: Andrey Andriyuk
+    email: Andrey_Andriyuk@protonmail.com
+  license:
+    name: Apache 2.0
+  version: "0.1"
+paths:
+  /api/v0_1/accounts/{accountId}/deposits:
+    post:
+      summary: ""
+      description: ""
+      operationId: create
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                balanceChangeRequest:
+                  $ref: '#/components/schemas/BalanceChangeRequest'
+        required: true
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/void'
+  /api/v0_1/accounts:
+    get:
+      summary: ""
+      description: ""
+      operationId: getList
+      parameters: []
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Account'
+    post:
+      summary: ""
+      description: ""
+      operationId: create
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountTemplate:
+                  $ref: '#/components/schemas/AccountTemplate'
+        required: true
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+  /api/v0_1/accounts/{accountId}:
+    get:
+      summary: ""
+      description: ""
+      operationId: getById
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+    delete:
+      summary: ""
+      description: ""
+      operationId: close
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: integer
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/void'
+  /api/v0_1/accounts/{accountId}/withdraws:
+    post:
+      summary: ""
+      description: ""
+      operationId: create
+      parameters:
+      - name: accountId
+        in: path
+        description: Account ID
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                balanceChangeRequest:
+                  $ref: '#/components/schemas/BalanceChangeRequest'
+        required: true
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/void'
+  /api/v0_1/transfers/transfers:
+    post:
+      summary: ""
+      description: ""
+      operationId: create
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                transferRequest:
+                  $ref: '#/components/schemas/TransferRequest'
+        required: true
+      responses:
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/void'
+components:
+  schemas:
+    void:
+      type: object
+    BalanceChangeRequest:
+      type: object
+      properties:
+        accountDescription:
+          $ref: '#/components/schemas/AccountTemplate'
+        amount:
+          type: number
+    AccountTemplate:
+      type: object
+      properties:
+        userId:
+          type: integer
+        number:
+          minLength: 1
+          type: string
+        balance:
+          type: number
+        currency:
+          $ref: '#/components/schemas/Currency'
+    Currency:
+      type: string
+      enum:
+      - USD
+      - EUR
+      - RUR
+    Account:
+      type: object
+      properties:
+        id:
+          type: integer
+        state:
+          $ref: '#/components/schemas/AccountState'
+      allOf:
+      - $ref: '#/components/schemas/AccountTemplate'
+    AccountState:
+      type: string
+      enum:
+      - OPENED
+      - CLOSED
+    TransferRequest:
+      type: object
+      properties:
+        sourceAccount:
+          $ref: '#/components/schemas/Account'
+        destinationAccount:
+          $ref: '#/components/schemas/Account'
+        amount:
+          type: number
